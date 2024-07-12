@@ -1,0 +1,30 @@
+body {
+    position: relative;
+}
+
+.start-project {
+    position: absolute;
+    left: 37vw;
+    top: 20vh;
+}
+
+.select-list {
+    position: absolute;
+    left: 34vw;
+    top: 30vh;
+    width: 30vw;
+    height: 10vh;
+    background-color: rgb(45, 84, 127);
+}
+
+/* liタグの中の要素にlistクラスを付与する */
+.list {
+    text-align: center;
+    font-size: 200%;
+    color: wheat;
+}
+
+li {
+    color: wheat;
+    margin: 1.1vh 4vw 1.1vh 4vw;
+}
