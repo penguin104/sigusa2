@@ -1,0 +1,55 @@
+/* ハンバーガーメニューのスタイルシート */
+.ham {
+    position: relative;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    background-color: blue;
+}
+
+/* ハンバーガーボタンのライン */
+.ham-line {
+    transition: all 0.3s;
+    position: absolute;
+    left: 10px;
+    width: 20px;
+    height: 2px;
+    background-color: black;
+}
+
+.ham-line1 {
+    top: 10px;
+}
+
+.ham-line1 {
+    top: 18px;
+}
+
+.ham-line1 {
+    top: 26px;
+}
+
+.clicked .ham-line1{
+    transform: rotate(45deg);
+    top: 20px;
+}
+.clicked .ham-line2{
+    width: 0px;
+}
+.clicked .ham-line3{
+    transform: rotate(-45deg);
+    top: 20px;
+}
+/* メニューの表示 */
+.menu{
+    position: fixed;
+    left: -400px;
+    width: 300px;
+    height: 300px;
+    background-color: blue;
+    transform: all 0.5s;
+    color: white;
+}
+.clicked .menu{
+    left: 8px;
+}
