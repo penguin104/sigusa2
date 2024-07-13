@@ -65,3 +65,7 @@ ham.addEventListener("click", function () {
         ham_flag = 1;
     }
 });
+
+function createProgram() {
+    //ダイアログ表示・データベースに情報を追加・リストタグに追加
+}
