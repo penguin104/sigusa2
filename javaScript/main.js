@@ -34,6 +34,7 @@ menu_values.forEach((value_ham) => {
             let process = document.createElement("div");
             process.setAttribute("id", "num" + programList.length + 1);//id付与
             process.classList.add(value_ham.action_kind);//class付与
+            process.classList.add("com-block");//共通class付与
             process.innerHTML = value_ham.action;
 
             programList.push(value_ham.action_kind);//リストに追加
