@@ -1,5 +1,24 @@
 
 // 要素
+const menu = document.getElementById("menu-value");//ハンバーガー要素のulタグ
+const menu_values = [
+    "前に進む",
+    "後ろに進む",
+    "右に回る",
+    "左に回る",
+    "首を振る",
+    "羽をパタパタさせる",
+]
+menu_values.forEach(value => {
+    let cnt = menu_values.indexOf(value);
+    let value_block = document.createElement("li");
+    value_block.setAttribute("id", "action-block" + cnt);
+    value_block.classList.add("action-block");
+    value_block.innerHTML = value;
+    menu.appendChild(value_block);
+});
+
+
 
 // ハンバーガーメニュー
 const ham = document.querySelector("#ham");
