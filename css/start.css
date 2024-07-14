@@ -9,9 +9,9 @@ body {
 }
 
 .select-list {
-    width: 75vw;
-    height: 10vh;
-    background-color: rgb(45, 84, 127);
+    /* width: 75vw;
+    height: 10vh; */
+    /* background-color: rgb(45, 84, 127); */
     margin: 0 5vw auto 5vw;
 }
 
@@ -43,6 +43,10 @@ li {
     font-size: 300%;
     color: wheat;
     text-decoration: none;
+    width: 75vw;
+    height: 10vh;
+    background-color: rgb(45, 84, 127);
+
 }
 
 .create-program-dialog {
