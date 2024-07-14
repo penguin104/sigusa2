@@ -3,6 +3,10 @@
 const menu = document.getElementById("menu-value");//ハンバーガー要素のulタグ
 const programs = document.getElementById("program-view");// プログラム表示させてる要素
 
+
+const create_dialog = document.getElementById("create-program-dialog");
+
+
 // ここに作ったプログラムの情報が入る
 var programList = [];
 
@@ -68,4 +72,9 @@ ham.addEventListener("click", function () {
 
 function createProgram() {
     //ダイアログ表示・データベースに情報を追加・リストタグに追加
+    create_dialog.show();
+}
+
+function close_dialog() {
+    create_dialog.close();
 }

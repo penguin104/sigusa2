@@ -21,6 +21,10 @@ body {
     height: 10vh;
     font-size: 150%;
     margin: 20px;
+    background-color: rgb(255, 234, 167);
+    color: rgb(49, 82, 105);
+    border: 3px rgb(46, 63, 92) solid;
+    border-radius: 20px;
 }
 
 /* liタグの中の要素にlistクラスを付与する */
@@ -39,4 +43,59 @@ li {
     font-size: 300%;
     color: wheat;
     text-decoration: none;
+}
+
+.create-program-dialog {
+    position: fixed;
+    width: 60vw;
+    height: 30vh;
+
+    border: 5px rgb(255, 251, 195) solid;
+    border-radius: 5px;
+    background-color: rgba(38, 87, 109, 0.694);
+}
+
+.new-program {
+    font-size: 150%;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: rgb(255, 241, 187);
+    width: 100%;
+    margin: 0;
+}
+
+.input-projectname {
+    position: absolute;
+    top: 25%;
+    color: rgb(244, 233, 163);
+    font-size: 120%;
+}
+
+.projectname-input {
+    background-color: rgba(255, 255, 255, 0);
+    width: 50vw;
+    border: 2px rgb(255, 241, 187) solid;
+}
+
+.cancel {
+    position: absolute;
+    top: 80%;
+    width: 30%;
+    height: 10%;
+    background-color: rgb(59, 81, 106);
+    font-size: 70%;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: rgb(255, 244, 182);
+    border: 2px rgb(220, 175, 175) solid;
+
+}
+
+.submit-create {
+    position: absolute;
+    top: 75%;
+    right: 4%;
+    height: 20%;
+    background-color: rgb(53, 86, 104);
+    color: antiquewhite;
+    border: 2px solid;
+
 }

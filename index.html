@@ -10,13 +10,33 @@
 </head>
 
 <body>
-    <a href="html/editView.html">さあ、始めよう</a>
     <div class="select-project">
         <h1 class="start-project">
             SIGUSA2 PROJECTS
         </h1>
         <div class="select-list-box">
             <button class="create-program-button" onclick="createProgram()">新しいプログラム</button>
+
+            <dialog class="create-program-dialog" id="create-program-dialog">
+                <div class="dialog-header">
+                    <h2 class="new-program">
+                        新しいプログラム
+                    </h2>
+                    <button onclick="close_dialog()" class="cancel">
+                        キャンセル
+                    </button>
+                </div>
+
+                <form action="html/editView.html">
+                    <p class="input-projectname">
+                        プロジェクト名:<input type="text" name="project-name" class="projectname-input" id="projectname-input">
+                    </p>
+                    <input type="submit" name="submit-create" id="create-program-submit" value="プログラミングを始めよう"
+                        class="submit-create" onclick="submit_create()">
+                </form>
+
+            </dialog>
+
             <ul class="select-list" id="select-list">
                 <li><a href="#" class="list">test</a></li> <!-- 作成したプロジェクトをローカルストレージから呼び出し  -->
             </ul>
