@@ -26,13 +26,13 @@
                         キャンセル
                     </button>
                 </div>
-
-                <form action="html/editView.html">
+                <!-- html/editView.html -->
+                <form action="html/editView.html" id="form" onsubmit="form_submit()">
                     <p class="input-projectname">
-                        プロジェクト名:<input type="text" name="project-name" class="projectname-input" id="projectname-input">
+                        プロジェクト名:<input type="text" name="projectName" class="projectname-input" id="projectname-input">
                     </p>
                     <input type="submit" name="submit-create" id="create-program-submit" value="プログラミングを始めよう"
-                        class="submit-create" onclick="submit_create()">
+                        class="submit-create">
                 </form>
 
             </dialog>

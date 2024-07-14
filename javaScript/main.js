@@ -6,9 +6,10 @@ const programs = document.getElementById("program-view");// プログラム表�
 
 const create_dialog = document.getElementById("create-program-dialog");
 
-
 // ここに作ったプログラムの情報が入る
 var programList = [];
+
+var projects = [];
 
 // 処理一覧
 const menu_values = [
@@ -49,10 +50,6 @@ menu_values.forEach((value_ham) => {
     );
 });
 
-
-
-
-
 // ハンバーガーメニュー
 const ham = document.querySelector("#ham");
 const menu_wrapper = document.querySelector("#menu-wrapper");
@@ -78,3 +75,69 @@ function createProgram() {
 function close_dialog() {
     create_dialog.close();
 }
+
+
+
+// データベース接続
+//コピペ　https://qiita.com/butakoma/items/2c1c956b63fcf956a137
+
+
+const projectdb = 'project';
+
+var openReq = indexedDB.open(projectdb, 1);
+//　DB名を指定して接続。DBがなければ新規作成される。
+
+var dbVersion;
+openReq.onsuccess = function (event) {
+    let db = event.target.result;
+    dbVersion = db.version;
+}
+openReq.onupgradeneeded = function (event) {
+    //onupgradeneededは、DBのバージョン更新(DBの新規作成も含む)時のみ実行
+    console.log('db upgrade');
+}
+openReq.onsuccess = function (event) {
+    //onupgradeneededの後に実行。更新がない場合はこれだけ実行
+    console.log('db open success');
+    let db = event.target.result;
+    // 接続を解除する
+    db.close();
+}
+openReq.onerror = function (event) {
+    // 接続に失敗
+    console.log('db open error');
+}
+
+
+//オブジェクトストア(table)
+
+var projectTable = "projectTeble";
+var openReq = indexedDB.open(projectdb, dbVersion);
+// オブジェクトストアの作成・削除はDBの更新時しかできないので、バージョンを指定して更新
+openReq.onupgradeneeded = function (event) {
+    let db = event.target.result;
+    db.createObjectStore(projectTable, { keyPath: 'id' });
+}
+
+function form_submit() {
+
+
+    var textfield_value = document.getElementById("form").projectName.value;//テキストフィールドの値
+    var data = { id: projects.length, projectName: textfield_value, program: programList };
+    projects.push(data);
+    console.log(projects[0].projectName);
+
+    var openReq = indexedDB.open(projectdb, dbVersion);
+
+    openReq.onsuccess = (event) => {
+        const db = event.target.result;
+        const transaction = db.transaction(projectTable, 'readwrite');
+        const objectStore = transaction.objectStore(projectTable);
+        objectStore.add(data);
+        console.log("done tansaction");
+    }
+
+
+};
+
+
