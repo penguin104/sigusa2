@@ -13,6 +13,15 @@ var projects = [];
 
 var select_data = {}
 
+const menu_values = [
+    { id: 0, action: "前に進む", action_kind: "forwd" },
+    { id: 1, action: "後ろに進む", action_kind: "back" },
+    { id: 2, action: "右に回る", action_kind: "right" },
+    { id: 3, action: "左に回る", action_kind: "left" },
+    { id: 4, action: "首を振る", action_kind: "head_action" },
+    { id: 5, action: "羽をパタパタさせる", action_kind: "flipper_action" },
+];
+
 window.addEventListener("load", function () {
     for (let key = 0; key < localStorage.length; key++) {
         sessionStorage.setItem(key, this.localStorage.getItem(key));
@@ -25,20 +34,33 @@ window.addEventListener("load", function () {
         programList = [...select_data.program];
     }
     //画面にブロック追加する処理書く
+    //リロード時に保存データの再描画
+    select_data.program.forEach(
+        value => {
+            let block_obj;
+            let process = document.createElement("div");
+            process.setAttribute("id", "num" + menu_values.map(function (obj) {
+                menu_values.forEach(menuValue => {
+                    if (menuValue.action_kind == value) {
+                        block_obj = { ...menuValue };
+                        return block_obj.id;
+                    }
+                });
+            }));//id付与
+            process.classList.add(value);//class付与
+            process.classList.add("com-block");//共通class付与
+            process.innerHTML = block_obj.action;
+            programs.appendChild(process);
+        }
+    );
+
     console.log("aaa");
     console.log(select_data);
 });
 
 
 // 処理一覧
-const menu_values = [
-    { id: 0, action: "前に進む", action_kind: "forwd" },
-    { id: 1, action: "後ろに進む", action_kind: "back" },
-    { id: 2, action: "右に回る", action_kind: "right" },
-    { id: 3, action: "左に回る", action_kind: "left" },
-    { id: 4, action: "首を振る", action_kind: "head_action" },
-    { id: 5, action: "羽をパタパタさせる", action_kind: "flipper_action" },
-];
+
 
 menu_values.forEach((value_ham) => {
     console.log(value_ham);
