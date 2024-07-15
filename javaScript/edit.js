@@ -11,8 +11,7 @@ var programList = [];
 // プロジェクト一時保存リスト
 var projects = [];
 
-var select_data = {};
-
+var select_data = {}
 
 window.addEventListener("load", function () {
     for (let key = 0; key < localStorage.length; key++) {

@@ -65,7 +65,9 @@ function form_submit() {
     var data = { "id": projects.length, "projectName": textfield_value, "program": programList };
     projects.push(data);
     localStorage.setItem(data.id, JSON.stringify(data));//ローカルストレージにプロジェクトデータ保存
-
+    select_data = {...data};
+    sessionStorage.setItem("select", JSON.stringify(select_data));
+    
     let created_project = document.createComment("li");
     created_project.setAttribute("id", "project" + projects.length);
     created_project.classList.add("list");
