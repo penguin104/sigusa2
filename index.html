@@ -16,7 +16,7 @@
         </h1>
         <div class="select-list-box">
             <button class="create-program-button" onclick="createProgram()">新しいプログラム</button>
-
+            <button class="reset_project" onclick="showResetDialog()">プロジェクトをリセット</button>
             <dialog class="create-program-dialog" id="create-program-dialog">
                 <div class="dialog-header">
                     <h2 class="new-program">
@@ -37,6 +37,12 @@
 
             </dialog>
 
+            <!-- リセットのダイアログ -->
+            <dialog id="reset-dialog" class="reset-dialog">
+                <p>全データを削除しますか？</p>
+                <button id="yes-button" onclick="clearLocalStrage()" class="yes-button">はい</button>
+                <button id="no-button" onclick="close_dialog()" class="no-button">いいえ</button>
+            </dialog>
             <ul class="select-list" id="select-list">
                 <!-- 作成したプロジェクトをローカルストレージから呼び出し  -->
             </ul>

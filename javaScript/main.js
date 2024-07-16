@@ -6,6 +6,7 @@ const programs = document.getElementById("program-view");// プログラム表�
 
 
 const create_dialog = document.getElementById("create-program-dialog");
+const clear_dialog = document.getElementById("reset-dialog");
 const projectListView = document.getElementById("select-list");
 // ここに作ったプログラムの情報が入る
 var programList = [];
@@ -56,8 +57,18 @@ function createProgram() {
 
 function close_dialog() {
     create_dialog.close();
+    clear_dialog.close();
 }
 
+function showResetDialog() {
+    clear_dialog.show();
+}
+
+function clearLocalStrage() {
+    localStorage.clear();
+    sessionStorage.clear();
+    window.location.reload();
+}
 
 
 function form_submit() {
@@ -65,9 +76,9 @@ function form_submit() {
     var data = { "id": projects.length, "projectName": textfield_value, "program": programList };
     projects.push(data);
     localStorage.setItem(data.id, JSON.stringify(data));//ローカルストレージにプロジェクトデータ保存
-    select_data = {...data};
+    select_data = { ...data };
     sessionStorage.setItem("select", JSON.stringify(select_data));
-    
+
     let created_project = document.createComment("li");
     created_project.setAttribute("id", "project" + projects.length);
     created_project.classList.add("list");
