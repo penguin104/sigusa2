@@ -88,4 +88,8 @@ function form_submit() {
     console.log(localStorage.getItem(0));
 };
 
-
+// ブラウザバック禁止
+window.history.pushState(null, null, window.location.href);
+window.addEventListener('popstate', (e) => {
+    history.go(1);
+});

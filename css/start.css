@@ -27,6 +27,18 @@ body {
     border-radius: 20px;
 }
 
+/* リセットボタン */
+.reset_project {
+    width: 20w;
+    height: 120%;
+    font-size: 150%;
+    margin: 20px;
+    background-color: rgb(255, 234, 167);
+    color: rgb(182, 78, 37);
+    border: 3px rgb(46, 63, 92) solid;
+    border-radius: 10px;
+}
+
 /* liタグの中の要素にlistクラスを付与する */
 
 li {
@@ -49,10 +61,11 @@ li {
 
 }
 
-.create-program-dialog {
+.dialog {
     position: fixed;
     width: 60vw;
-    height: 30vh;
+    height: 50vh;
+    top: 10vh;
 
     border: 5px rgb(255, 251, 195) solid;
     border-radius: 5px;
@@ -91,6 +104,44 @@ li {
     color: rgb(255, 244, 182);
     border: 2px rgb(220, 175, 175) solid;
 
+}
+
+.yes-button {
+    position: absolute;
+    top: 70%;
+    right: 5%;
+
+    border: 5px rgba(255, 0, 0, 0.488) solid;
+    border-radius: 10px;
+    background-color: rgba(250, 235, 215, 0.55);
+    color: rgb(249, 44, 44);
+
+    font-size: 100%;
+
+    width: 30%;
+    height: 20%;
+}
+
+.no-button {
+    position: absolute;
+    top: 70%;
+    left: 5%;
+
+    border: 5px rgba(0, 4, 255, 0.477) solid;
+    border-radius: 10px;
+    background-color: rgba(255, 244, 186, 0.78);
+    color: rgb(44, 57, 126);
+
+    font-size: 100%;
+
+    width: 35%;
+    height: 20%;
+}
+
+.check-reset-text {
+    text-align: center;
+    color: antiquewhite;
+    font-size: 120%;
 }
 
 .submit-create {
