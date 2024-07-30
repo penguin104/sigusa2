@@ -13,11 +13,26 @@
 <body>
 
     <div class="title-app">
-        <h1>
-            <a href="../index.html">
-                SIGUSA2
-            </a>
-        </h1>
+        <div class="edit_head">
+            <h1>
+                <a href="../index.html">
+                    SIGUSA2
+                </a>
+            </h1>
+
+            <button class="showDialogSubmit" onclick="showDialogSubmit()">送信</button>
+            <dialog id="submitProgram" class="dialogSubmit">
+                <label>SIGUSAのIPアドレス<input type="text" id="ip_text"></label>
+                <form method="post" action="" id="submitProgramForm">
+
+                </form>
+
+                <button onclick="closeDialog()">キャンセル</button>
+
+                <button class="submitButton" id="submitButton" onclick="submitToSIGUSA()">SIGUSAにプログラムを送る</button>
+            </dialog>
+
+        </div>
         <div class="main-contents">
             <div class="ham" id="ham"><!--ハンバーガーボタン-->
                 <spqn class="ham-line ham-line1"></spqn>

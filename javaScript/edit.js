@@ -4,6 +4,8 @@ const menu = document.getElementById("menu-value");//ハンバーガー要素の
 const programs = document.getElementById("program-view");// プログラム表示させてる要素
 
 
+const submit_dialog = document.getElementById("submitProgram");
+
 const create_dialog = document.getElementById("create-program-dialog");
 const projectListView = document.getElementById("select-list");
 // ここに作ったプログラムの情報が入る
@@ -117,3 +119,32 @@ window.history.pushState(null, null, window.location.href);
 window.addEventListener('popstate', (e) => {
     history.go(1);
 });
+
+
+//送信時処理周り
+function showDialogSubmit() {
+    submit_dialog.show();
+}
+
+function closeDialog() {
+    submit_dialog.close();
+}
+function submitToSIGUSA() {
+    const formSubmit = document.getElementById("submitProgramForm");
+    ip_address_input = document.getElementById("ip_text");
+    ip = ip_address_input.value;
+    sendData = localStorage.getItem(select_data.id, JSON.stringify(select_data));
+
+
+    // 送信できてるか確認したい
+    // あと画面遷移してしまうからそこ要対処
+    if (ip == "") {
+        formSubmit.action += "?data=" + sendData;
+    } else {
+        formSubmit.action = ip;
+        formSubmit.action += "?data=" + sendData;
+    }
+
+
+    formSubmit.submit();
+}
