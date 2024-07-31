@@ -134,17 +134,12 @@ function submitToSIGUSA() {
     ip_address_input = document.getElementById("ip_text");
     ip = ip_address_input.value;
     sendData = localStorage.getItem(select_data.id, JSON.stringify(select_data));
-
-
-    // 送信できてるか確認したい
-    // あと画面遷移してしまうからそこ要対処
-    if (ip == "") {
-        formSubmit.action += "?data=" + sendData;
-    } else {
-        formSubmit.action = ip;
-        formSubmit.action += "?data=" + sendData;
-    }
-
-
-    formSubmit.submit();
+    // Arduinoでクエリパラメータを取得・確認する
+    fetch(
+        ip + "?data=" + sendData,//URL
+    ).then(
+        () => {
+            console.log(ip + "?data=" + sendData);
+        }
+    );
 }
