@@ -136,7 +136,7 @@ function submitToSIGUSA() {
     sendData = localStorage.getItem(select_data.id, JSON.stringify(select_data));
     // Arduinoでクエリパラメータを取得・確認する
     fetch(
-        "http://" + ip + "?data=" + sendData,//URL
+        ip + "?data=" + sendData,//URL
     ).then(
         () => {
             console.log(ip + "?data=" + sendData);
