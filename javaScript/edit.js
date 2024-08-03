@@ -144,3 +144,9 @@ function submitToSIGUSA() {
     );
     submit_dialog.close();
 }
+
+if (window.fetch) {
+    console.log("OK fetch");
+} else {
+    console.log("NG fetch");
+}
